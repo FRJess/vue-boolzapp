@@ -56,6 +56,7 @@ a{
 .user {
   background-color: #eaeaea;
   height: 70px;
+  justify-content: space-between;
 }
 
 .user-informations img {
@@ -128,16 +129,13 @@ a{
 .current-contact{
   background-color: #eaeaea;
   height: 70px;
+  justify-content: space-between;
 }
 
 .current-contact img {
   border-radius: 50%;
   width: 50px;
   margin: 10px;
-}
-
-.conversartion-icons{
-  justify-content: flex-end;
 }
 
 .conversartion-icons a{
