@@ -18,7 +18,7 @@ a{
   margin: auto;
   padding-top: 20px;
   height: 90vh;
-  background-color: lightgray;
+  /* background-color: lightgray; */
 }
 
 .left-container{
@@ -72,6 +72,7 @@ a{
 .contacts-list{
   overflow: auto;
   width: 98%;
+  /* background-color: white; */
 }
 
 .card-contact{
