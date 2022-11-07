@@ -10,6 +10,8 @@ body{
   background-color:#DDE0DA;
 }
 
+/* fonts */
+
 h3{
   font-size: 1rem;
 }
@@ -26,6 +28,26 @@ p {
   font-size: 0.75rem;
 }
 
+p.small {
+  font-size: 0.60rem;
+}
+
+a{
+  color:#BBBABA;
+}
+
+a:hover{
+  color: #0b9688;
+}
+
+/* BODY */
+.main-container{
+  width: 1200px;
+  margin: auto;
+  padding-top: 20px;
+  height: 95vh;
+}
+
 .head_background-green {
   position: absolute;
   top: 0;
@@ -36,27 +58,18 @@ p {
   z-index: -1;
 }
 
-a{
-  color:#BBBABA;
-}
-
-.main-container{
-  width: 1200px;
-  margin: auto;
-  padding-top: 20px;
-  height: 95vh;
-}
-
+/* CONTACTS */
 .left-container{
   width: 40%;
   flex-direction: column;
-  background-color:#F3F3F3;
+  background-color: white;
 }
 
 .user {
   background-color: #eaeaea;
   height: 70px;
   justify-content: space-between;
+  border-right: 2px solid #E7E7E7;
 }
 
 .user-informations img {
@@ -105,6 +118,7 @@ a{
 .contacts-list{
   overflow: auto;
   width: 98%;
+  /* height: calc(100% - 170px); */
   background-color: white;
 }
 
@@ -119,6 +133,7 @@ a{
   border-radius: 50%;
 }
 
+/* CONVERSATIONS */
 .right-container{
   width: 60%;
   height: 100%;
@@ -158,7 +173,7 @@ a{
 }
 
 .message{
-  padding: 20px;
+  padding: 18px;
   border-radius: 10px;
   max-width: 60%;
   min-width: 35%;

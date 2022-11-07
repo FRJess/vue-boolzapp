@@ -4,6 +4,7 @@ const { createApp } = Vue;
 
 createApp({
 
+  // MY OBJECTS
   data(){
     return{
       contacts: [
@@ -60,9 +61,4 @@ createApp({
     }
   },
 
-  // methods:{
-
-  // }
-
 }).mount('#app')
-console.log("JS presente")
