@@ -7,6 +7,17 @@
 
 body{
   height: 100vh;
+  background-color:#DDE0DA;
+}
+
+.head_background-green {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #0b9688;
+  z-index: -1;
 }
 
 a{
@@ -18,12 +29,12 @@ a{
   margin: auto;
   padding-top: 20px;
   height: 95vh;
-  /* background-color: lightgray; */
 }
 
 .left-container{
   width: 40%;
   flex-direction: column;
+  background-color:white;
 }
 
 .user {
@@ -31,13 +42,18 @@ a{
   height: 70px;
 }
 
-.user img {
+.user-informations img {
   width: 50px;
   margin: 10px;
   border-radius: 50%;
 }
 
-.info_user_icon a {
+.user-icons{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.user-icons a {
   display: inline-block;
   margin-right: 8px;
   padding: 7px;
@@ -59,11 +75,11 @@ a{
   color: #8fdafa;
 }
 
-.search_contacts .form-control {
+.search-contact .form-control {
   border-color: transparent;
 }
 
-.search_contacts .btn-outline-secondary {
+.search-contact .btn-outline-secondary {
   background-color: white;
   border-color: transparent;
   border-right: none;
@@ -107,7 +123,7 @@ a{
 .conversartion-icons a{
   display: inline-block;
   margin-right: 8px;
-  padding: 7px;
+  padding: 8px;
 }
 
 .conversation{

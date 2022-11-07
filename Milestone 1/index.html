@@ -27,12 +27,16 @@
 <body>
   <div id="app">
 
+    <div class="head_background-green"></div>
+
     <main class="main-container d-flex">
       <div class="left-container d-flex">
 
         <div class="user d-flex align-items-center">
-          <img src="img/avatar_io.jpg" alt="user image">
-          <h6 class="m-0">Jessica</h6>
+          <div class="user-informations d-flex align-items-center">
+            <img src="img/avatar_io.jpg" alt="user image">
+            <h6 class="m-0">Jessica</h6>
+          </div>
           <div class="user-icons">
             <a href="#"><i class="fas fa-circle-notch"></i></a>
             <a href="#"><i class="fas fa-comment-alt"></i></a>
@@ -45,7 +49,7 @@
           <div class="notification-text">
             <h6 class="m-0 mb-1">Ricevi notifiche di nuovi messaggi</h6>
             <a href="#">
-              <p>Attiva notifiche desktop</p>
+              <p class="m-0">Attiva notifiche desktop</p>
             </a>
           </div>
         </div>
@@ -130,9 +134,8 @@
         <div class="current-contact d-flex align-items-center">
           <img src="img/avatar_1.jpg" alt="user image">
           <div class="info-current-contact">
-            <h6>Fabio</h6>
-            <p class="m-0 text-secondary">Ultimo accesso il 2021/11/03 alle 13:28:00</p>
-
+            <h6 class="mb-1">Fabio</h6>
+            <p class="m-0 text-secondary">Ultimo accesso oggi3 alle 12:00</p>
           </div>
 
           <div class="conversartion-icons">
@@ -164,7 +167,7 @@
             </div>
 
             <div class="message-container d-flex py-2">
-              <div class="message received me-5 position-relative">
+              <div class="message received ms-5 position-relative">
                   <h4 class="m-0">Tutto fatto!</h4>
                   <div class="single_message_times position-absolute bottom-0 end-0 p-1">
                       <p class="m-0 text-secondary small">16:15</p>
