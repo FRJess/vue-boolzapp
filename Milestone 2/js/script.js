@@ -174,8 +174,10 @@ createApp({
     }
   },
 
+  //MY FUNCTIONS
   methods:{
 
+    //change conversation when contact click
     choseConversation(index){
       this.activeConversation = index;
     },
