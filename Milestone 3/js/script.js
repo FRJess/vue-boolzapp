@@ -190,6 +190,16 @@ createApp({
       }
       this.contacts[this.activeConversation].messages.push(newMessage);
       this.newMessageContent = '';
+      setTimeout(this.getReplyMessage, 1000);
+    },
+
+    getReplyMessage(){
+      const newMessage = {
+        message: 'ok',
+        date: 'now',
+        status: 'received'
+      }
+      this.contacts[this.activeConversation].messages.push(newMessage);
     }
   }
 
