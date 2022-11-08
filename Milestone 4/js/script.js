@@ -213,17 +213,15 @@ createApp({
       this.contacts[this.activeConversation].messages.push(newMessage);
     },
 
+    //search input with map
     searchContact(){
-      console.log(this.contactFilter)
       this.contacts = this.contacts.map(contact => {
         if(!contact.name.toLowerCase().includes(this.contactFilter.toLowerCase()))
         {
           contact.visible = false;
-          // console.log(contact)
         }else
         {
           contact.visible = true;
-          
         }
         return contact
       });
