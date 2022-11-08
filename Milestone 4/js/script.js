@@ -172,6 +172,7 @@ createApp({
       ],
 
       activeConversation: 0,
+      contactFilter: '',
     }
   },
 
@@ -180,7 +181,9 @@ createApp({
 
     //change conversation when contact click
     choseConversation(index){
+      this.contacts[this.activeConversation].active = false; 
       this.activeConversation = index;
+      this.contacts[this.activeConversation].active = true;
     },
 
     //add new message to conversation using input
@@ -207,7 +210,24 @@ createApp({
         status: 'received'
       }
       this.contacts[this.activeConversation].messages.push(newMessage);
+    },
+
+    searchContact(){
+      this.contacts.filter(contact => {
+        if(!contact.name.toLowerCase().includes(this.contactFilter.toLowerCase()))
+        {
+          contact.visible = false;
+        }else
+        {
+          contact.visible = true;
+          console.log(contact)
+        }
+      });
     }
+  },
+
+  mounted(){
+
   }
 
 }).mount('#app')
