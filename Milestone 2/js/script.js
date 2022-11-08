@@ -58,7 +58,7 @@ createApp({
           messages: [
             {
               date: '28/03/2020 10:10:40',
-              message: 'La Marianna va in campagna',
+              message: 'Alessia va in campagna',
               status: 'received'
             }, 
             {
@@ -97,7 +97,7 @@ createApp({
           messages: [
             {
               date: '10/01/2020 15:30:55',
-              message: 'Ricordati di chiamare la nonna',
+              message: 'Ricordati di chiamare nonna',
               status: 'sent'
             }, 
             {
@@ -114,7 +114,7 @@ createApp({
           messages: [
             {
               date: '10/01/2020 15:30:55',
-              message: 'Ciao Claudia, hai novità?',
+              message: 'Ciao Ilaria, hai novità?',
               status: 'sent'
             }, 
             {
@@ -170,14 +170,14 @@ createApp({
         } 
       ],
 
-      activeContact: 0,
+      activeConversation: 0,
     }
   },
 
   methods:{
 
-    choseContact(index){
-      this.activeContact = index;
+    choseConversation(index){
+      this.activeConversation = index;
     },
   }
 

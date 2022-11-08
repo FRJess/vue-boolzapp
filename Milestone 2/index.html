@@ -74,8 +74,8 @@
           <div 
           class="card-contact d-flex position-relative" 
           v-for="(contact, index) in contacts"
-          @click="choseContact(index)"
-          :class="{'contact-active': index === activeContact}">
+          @click="choseConversation(index)"
+          :class="{'contact-active': index === activeConversation}">
             <img :src="`img/avatar${contact.avatar}.jpg`" alt="user image">
             <div class="card-contact-text">
                 <h3 class="mb-1 mt-1">{{contact.name}}</h3>
@@ -98,10 +98,10 @@
 
           <div class="info-current-contact d-flex align-items-center">
             <img 
-            :src="`img/avatar${contacts[activeContact].avatar}.jpg`" 
-            alt="contacts[activeContact].name">
+            :src="`img/avatar${contacts[activeConversation].avatar}.jpg`" 
+            alt="contacts[activeConversation].name">
             <div class="current-contact-text">
-              <h4 class="mb-1">{{contacts[activeContact].name}}</h4>
+              <h4 class="mb-1">{{contacts[activeConversation].name}}</h4>
               <p class="m-0 text-secondary">Ultimo accesso oggi alle 12:00</p>
             </div>
           </div>
@@ -117,16 +117,22 @@
         <div class="conversation">
           <div class="messages-container">
 
-            <div class="message-container d-flex justify-content-end py-2">
-                <div class="message sent me-5 position-relative">
-                    <h3 class="m-0">Hai portato a spasso il cane?</h3>
-                    <div class="single_message_times position-absolute bottom-0 end-0 p-1">
-                        <p class="m-0 text-secondary small">15:30</p>
+            <div 
+            class="message-container d-flex py-2"
+            v-for="(conversation, index) in contacts[activeConversation].messages"
+            :class="conversation.status">
+                <div 
+                class="message position-relative"
+                :class="conversation.status == 'sent' ? 'my-message' : 'contact-message'"
+                >
+                    <h3 class="mb-1">{{conversation.message}}</h3>
+                    <div class="message-time position-absolute bottom-0 end-0">
+                        <p class="m-0 text-secondary small">{{conversation.date}}</p>
                     </div>
                 </div>
             </div>
 
-            <div class="message-container d-flex justify-content-end py-2">
+            <!-- <div class="message-container d-flex justify-content-end py-2">
               <div class="message sent me-5 position-relative">
                   <h3 class="m-0">Ricordati anche di stendere i panni per favore!</h3>
                   <div class="single_message_times position-absolute bottom-0 end-0 p-1">
@@ -142,7 +148,7 @@
                       <p class="m-0 text-secondary small">16:15</p>
                   </div>
               </div>
-            </div>
+            </div> -->
 
           </div>
 

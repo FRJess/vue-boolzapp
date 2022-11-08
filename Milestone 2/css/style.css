@@ -171,18 +171,32 @@ a:hover{
 }
 
 .message{
-  padding: 18px;
+  padding: 15px;
   border-radius: 10px;
   max-width: 60%;
-  min-width: 35%;
+  min-width: 30%;
 }
 
-.message.received {
+.received {
+  justify-content: flex-start;
+  margin-left: 20px;
+}
+
+.contact-message{
   background-color: white;
 }
 
-.message.sent {
+.sent {
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+
+.my-message{
   background-color: #d6fabe;
+}
+
+.message-time{
+  padding: 0 5px 2px 0;
 }
 
 .new-message{
