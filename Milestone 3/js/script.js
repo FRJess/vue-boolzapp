@@ -175,12 +175,15 @@ createApp({
     }
   },
 
+  //MY FUNCTIONS
   methods:{
 
+    //change conversation when contact click
     choseConversation(index){
       this.activeConversation = index;
     },
 
+    //add new message to conversation using input
     createMessage(){
       if(!this.newMessageContent) return;
       const newMessage = {
@@ -193,6 +196,7 @@ createApp({
       setTimeout(this.getReplyMessage, 1000);
     },
 
+    //automatic answer by current contact
     getReplyMessage(){
       const newMessage = {
         message: 'ok',
