@@ -191,7 +191,10 @@ createApp({
         date: 'now',
         status: 'sent'
       }
+
+      //push new message to conversation
       this.contacts[this.activeConversation].messages.push(newMessage);
+      //reset new message input
       this.newMessageContent = '';
       setTimeout(this.getReplyMessage, 1000);
     },
