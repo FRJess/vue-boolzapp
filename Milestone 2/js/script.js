@@ -9,7 +9,7 @@ createApp({
     return{
       contacts: [ 
         {
-          name: 'Michele',
+          name: 'Fabio',
           avatar: '_1',
           visible: true,  
           messages: [ 
@@ -31,7 +31,7 @@ createApp({
           ],
         }, 
         {
-          name: 'Fabio',
+          name: 'Gianluca',
           avatar: '_2',
           visible: true,
           messages: [
@@ -52,7 +52,7 @@ createApp({
           ]
         },
         {
-          name: 'Samuele',
+          name: 'Noah',
           avatar: '_3',
           visible: true,
           messages: [
@@ -74,7 +74,7 @@ createApp({
           ],
          }, 
         {
-          name: 'Alessandro B.',
+          name: 'Marco',
           avatar: '_4',
           visible: true,
           messages: [
@@ -91,7 +91,7 @@ createApp({
           ],
         }, 
         {
-          name: 'Alessandro L.',
+          name: 'Davide',
           avatar: '_5',
           visible: true,
           messages: [
@@ -108,7 +108,7 @@ createApp({
           ],
         }, 
         {
-          name: 'Claudia',
+          name: 'Ilaria',
           avatar: '_6',
           visible: true,
           messages: [
@@ -130,7 +130,7 @@ createApp({
           ],
         }, 
         {
-          name: 'Federico',
+          name: 'Flavio',
           avatar: '_7',
           visible: true,
           messages: [
@@ -147,7 +147,7 @@ createApp({
           ],
         }, 
         {
-          name: 'Davide',
+          name: 'Alessio',
           avatar: '_8',
           visible: true,
           messages: [
@@ -168,8 +168,18 @@ createApp({
             } 
           ],
         } 
-      ]
+      ],
+
+      activeContact: 0,
     }
   },
 
+  methods:{
+
+    choseContact(index){
+      this.activeContact = index;
+    },
+  }
+
 }).mount('#app')
+console.log("Vue OK")

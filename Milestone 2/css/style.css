@@ -199,3 +199,8 @@ a:hover{
 .new-message .form-control{
   border-color: transparent;
 }
+
+.contact-active{
+  opacity: 1;
+  background-color: #ECEEEE;
+}

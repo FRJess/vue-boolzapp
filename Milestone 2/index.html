@@ -23,7 +23,7 @@
   <!-- VUE -->
   <script src="https://unpkg.com/vue@3"></script>
 
-  <title>Boolzapp</title>
+  <title>Boolzapp Milestone 2</title>
 </head>
 
 <!-- Inizio Body -->
@@ -73,7 +73,9 @@
         <div class="contacts-list d-flex flex-column">
           <div 
           class="card-contact d-flex position-relative" 
-          v-for="(contact, index) in contacts">
+          v-for="(contact, index) in contacts"
+          @click="choseContact(index)"
+          :class="{'contact-active': index === activeContact}">
             <img :src="`img/avatar${contact.avatar}.jpg`" alt="user image">
             <div class="card-contact-text">
                 <h3 class="mb-1 mt-1">{{contact.name}}</h3>
@@ -95,9 +97,11 @@
         <div class="current-contact d-flex align-items-center">
 
           <div class="info-current-contact d-flex align-items-center">
-            <img src="img/avatar_1.jpg" alt="user image">
+            <img 
+            :src="`img/avatar${contacts[activeContact].avatar}.jpg`" 
+            alt="contacts[activeContact].name">
             <div class="current-contact-text">
-              <h4 class="mb-1">Fabio</h4>
+              <h4 class="mb-1">{{contacts[activeContact].name}}</h4>
               <p class="m-0 text-secondary">Ultimo accesso oggi alle 12:00</p>
             </div>
           </div>
