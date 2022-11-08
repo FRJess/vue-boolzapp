@@ -21,7 +21,7 @@ createApp({
             }, 
             {
               date: '10/01/2020 15:50:00',
-              message: 'Ricordati di stendere i panni',
+              message: 'Ricordati anche di stendere i panni per favore',
               status: 'sent'
             }, 
             {
@@ -172,6 +172,7 @@ createApp({
       ],
 
       activeConversation: 0,
+      newMessage: '',
       contactFilter: '',
     }
   },
@@ -213,15 +214,18 @@ createApp({
     },
 
     searchContact(){
-      this.contacts.filter(contact => {
+      console.log(this.contactFilter)
+      this.contacts = this.contacts.map(contact => {
         if(!contact.name.toLowerCase().includes(this.contactFilter.toLowerCase()))
         {
           contact.visible = false;
+          // console.log(contact)
         }else
         {
           contact.visible = true;
-          console.log(contact)
+          
         }
+        return contact
       });
     }
   },

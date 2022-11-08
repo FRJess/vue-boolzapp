@@ -123,6 +123,7 @@ a:hover{
 .card-contact{
   border-bottom: 1px solid #FBFBFB;
   cursor: pointer;
+  display: flex;
 }
 
 .card-contact img {
