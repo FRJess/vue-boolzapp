@@ -23,7 +23,7 @@
   <!-- VUE -->
   <script src="https://unpkg.com/vue@3"></script>
 
-  <title>Boolzapp Milestone 2</title>
+  <title>Boolzapp Milestone 3</title>
 </head>
 
 <!-- Inizio Body -->
@@ -131,25 +131,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- <div class="message-container d-flex justify-content-end py-2">
-              <div class="message sent me-5 position-relative">
-                  <h3 class="m-0">Ricordati anche di stendere i panni per favore!</h3>
-                  <div class="single_message_times position-absolute bottom-0 end-0 p-1">
-                      <p class="m-0 text-secondary small">15:50</p>
-                  </div>
-              </div>
-            </div>
-
-            <div class="message-container d-flex py-2">
-              <div class="message received ms-5 position-relative">
-                  <h3 class="m-0">Tutto fatto!</h3>
-                  <div class="single_message_times position-absolute bottom-0 end-0 p-1">
-                      <p class="m-0 text-secondary small">16:15</p>
-                  </div>
-              </div>
-            </div> -->
-
           </div>
 
         </div>
@@ -158,7 +139,12 @@
         <div class="new-message d-flex align-items-center">
           <a href="#"><i class="far fa-smile"></i></a>
           <div class="input-group m-0 input_write_text">
-              <input type="text" class="form-control" placeholder="Scrivi un messaggio">
+              <input 
+              type="text" 
+              class="form-control" 
+              placeholder="Scrivi un messaggio"
+              @keyup.enter="createMessage()"
+              v-model="newMessageContent">
           </div>
           <a href="#"><i class="fas fa-microphone"></i></a>
 

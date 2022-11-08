@@ -7,6 +7,7 @@ createApp({
   // MY OBJECTS
   data(){
     return{
+      newMessageContent: '',
       contacts: [ 
         {
           name: 'Fabio',
@@ -179,6 +180,17 @@ createApp({
     choseConversation(index){
       this.activeConversation = index;
     },
+
+    createMessage(){
+      if(!this.newMessageContent) return;
+      const newMessage = {
+        message: this.newMessageContent,
+        date: 'now',
+        status: 'sent'
+      }
+      this.contacts[this.activeConversation].messages.push(newMessage);
+      this.newMessageContent = '';
+    }
   }
 
 }).mount('#app')
