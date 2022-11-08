@@ -1,0 +1,220 @@
+/* GENERAL */
+*{
+  margin: 0;
+  padding:  0;
+  box-sizing: border-box;
+}
+
+body{
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  background-image: 
+  linear-gradient(to bottom,
+  #009688 0px,
+  #009688 15vh,
+  #dddbd1 15vh,
+  #d2dbdc 100%);
+}
+
+/* fonts */
+
+h3{
+  font-size: 1rem;
+}
+
+h4{
+  font-size: 0.95rem;
+}
+
+i{
+  font-size: 25px;
+}
+
+p {
+  font-size: 0.75rem;
+}
+
+p.small {
+  font-size: 0.60rem;
+}
+
+a{
+  color:#BBBABA;
+}
+
+a:hover{
+  color: #0b9688;
+}
+
+/* BODY */
+.main-container{
+  width: 1200px;
+  margin: auto;
+  padding-top: 80px;
+  height: 95vh;
+}
+
+/* CONTACTS */
+.left-container{
+  width: 40%;
+  flex-direction: column;
+  background-color: white;
+}
+
+.user {
+  background-color: #eaeaea;
+  height: 70px;
+  justify-content: space-between;
+  border-right: 2px solid #E7E7E7;
+}
+
+.user-informations img {
+  width: 50px;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.user-icons{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.user-icons a {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 7px;
+}
+
+.notifications{
+  background-color: #99DFFC;
+}
+
+.notifications > a {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #ffffff;
+  margin: 12px 10px 12px 15px;
+  color: #8fdafa;
+}
+
+.search-contact .form-control {
+  border-color: transparent;
+}
+
+.search-contact .btn-outline-secondary {
+  background-color: white;
+  border-color: transparent;
+  border-right: none;
+}
+
+.contacts-list{
+  overflow: auto;
+  width: 100%;
+  padding-right: 5px;
+  /* height: calc(100% - 170px); */
+  background-color: white;
+}
+
+.card-contact{
+  border-bottom: 1px solid #FBFBFB;
+  cursor: pointer;
+}
+
+.card-contact img {
+  width: 50px;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+/* CONVERSATIONS */
+.right-container{
+  width: 60%;
+  height: 100%;
+  flex-direction: column;
+  background-color: #F3F3F3;
+}
+
+.current-contact{
+  background-color: #eaeaea;
+  height: 70px;
+  justify-content: space-between;
+}
+
+.current-contact img {
+  border-radius: 50%;
+  width: 50px;
+  margin: 10px;
+}
+
+.conversartion-icons a{
+  display: inline-block;
+  margin-right: 8px;
+  padding: 8px;
+}
+
+.conversation{
+  background-image: url(../img/mine.jpg);
+  object-fit: cover;
+  width: 100%;
+  overflow-y: auto;
+  height: calc(100% - 140px);
+}
+
+.messages-container{
+  height: 100%;
+  padding: 30px 0;
+}
+
+.message{
+  padding: 15px;
+  border-radius: 10px;
+  max-width: 60%;
+  min-width: 30%;
+}
+
+.received {
+  justify-content: flex-start;
+  margin-left: 20px;
+}
+
+.contact-message{
+  background-color: white;
+}
+
+.sent {
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+
+.my-message{
+  background-color: #d6fabe;
+}
+
+.message-time{
+  padding: 0 5px 2px 0;
+}
+
+.new-message{
+  background-color: #f3eeea;
+  height: 70px;
+}
+
+.new-message a{
+  display: inline-block;
+  margin: 0 15px;
+  padding: 6px;
+}
+
+.new-message .form-control{
+  border-color: transparent;
+}
+
+.contact-active{
+  opacity: 1;
+  background-color: #ECEEEE;
+}

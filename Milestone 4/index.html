@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- VUE -->
+  <script src="https://unpkg.com/vue@3"></script>
+
+  <title>Boolzapp Milestone 3</title>
+</head>
+
+<!-- Inizio Body -->
+<body>
+  <div id="app">
+
+    <main class="main-container d-flex">
+
+
+      <!-- Left container start -->
+      <div class="left-container d-flex">
+
+        <!-- User section -->
+        <div class="user d-flex align-items-center">
+          <div class="user-informations d-flex align-items-center">
+            <img src="img/avatar_io.jpg" alt="user image">
+            <h4 class="m-0">Jessica</h4>
+          </div>
+          <div class="user-icons">
+            <a href="#"><i class="fas fa-circle-notch"></i></a>
+            <a href="#"><i class="fas fa-comment-alt"></i></a>
+            <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+          </div>
+        </div>
+
+        <!-- Notification settings setion -->
+        <div class="notifications d-flex align-items-center">
+          <a href="#"><i class="fas fa-bell-slash"></i></a>
+          <div class="notification-text">
+            <h4 class="m-0 mb-1">Ricevi notifiche di nuovi messaggi</h4>
+            <a href="#">
+              <p class="m-0">Attiva notifiche desktop</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Search input -->
+        <div class="search-contact">
+          <div class="input-group mb-0 p-2 bg-light search_contacts">
+            <button class="btn btn-outline-secondary" type="button">
+              <i class="fas fa-search"></i></button>
+            <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+          </div>
+        </div>
+
+        <!-- Contacts list -->
+        <div class="contacts-list d-flex flex-column">
+          <div 
+          class="card-contact d-flex position-relative" 
+          v-for="(contact, index) in contacts"
+          @click="choseConversation(index)"
+          :class="{'contact-active': index === activeConversation}">
+            <img :src="`img/avatar${contact.avatar}.jpg`" alt="user image">
+            <div class="card-contact-text">
+                <h3 class="mb-1 mt-1">{{contact.name}}</h3>
+                <p class="m-0 text-secondary">Ultimo messaggio inviato</p>
+            </div>
+            <div class="last_message-time position-absolute top-0 end-0 p-1">
+                <p class="text-secondary m-0">12:00</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- Left container end -->
+
+      <!-- Right container start -->
+      <div class="right-container d-flex">
+
+        <!-- Current contact informations -->
+        <div class="current-contact d-flex align-items-center">
+
+          <div class="info-current-contact d-flex align-items-center">
+            <img 
+            :src="`img/avatar${contacts[activeConversation].avatar}.jpg`" 
+            alt="contacts[activeConversation].name">
+            <div class="current-contact-text">
+              <h4 class="mb-1">{{contacts[activeConversation].name}}</h4>
+              <p class="m-0 text-secondary">Ultimo accesso oggi alle 12:00</p>
+            </div>
+          </div>
+
+          <div class="conversartion-icons d-flex align-items-center">
+            <a href="#"><i class="fas fa-search"></i></a>
+            <a href="#"><i class="fas fa-paperclip"></i></a>
+            <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+          </div>
+        </div>
+
+        <!-- Conversation -->
+        <div class="conversation">
+          <div class="messages-container">
+
+            <div 
+            class="message-container d-flex py-2"
+            v-for="(conversation, index) in contacts[activeConversation].messages"
+            :class="conversation.status">
+                <div 
+                class="message position-relative"
+                :class="conversation.status == 'sent' ? 'my-message' : 'contact-message'"
+                >
+                    <h3 class="mb-1">{{conversation.message}}</h3>
+                    <div class="message-time position-absolute bottom-0 end-0">
+                        <p class="m-0 text-secondary small">{{conversation.date}}</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- New message input -->
+        <div class="new-message d-flex align-items-center">
+          <a href="#"><i class="far fa-smile"></i></a>
+          <div class="input-group m-0 input_write_text">
+              <input 
+              type="text" 
+              class="form-control" 
+              placeholder="Scrivi un messaggio"
+              @keyup.enter="createMessage()"
+              v-model="newMessageContent">
+          </div>
+          <a href="#"><i class="fas fa-microphone"></i></a>
+
+        </div>
+
+      </div>
+      <!-- Right container end -->
+
+    </main>
+
+  </div>
+
+
+  <!-- JS -->
+  <script src="js/script.js"></script>
+</body>
+<!-- Fine Body -->
+
+</html>
