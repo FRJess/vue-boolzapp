@@ -238,7 +238,6 @@ createApp({
         status: 'received'
       }
       this.contacts[this.activeConversation].messages.push(newMessage);
-      // setTimeout(this.refreshScroll, 100);
       setTimeout(() => {
         this.autoScroll();
       }, 10);
@@ -283,8 +282,8 @@ createApp({
 
     //scroll
     autoScroll(){
-      const chatContainer = document.getElementsByClassName('.messages-container');
-      return chatContainer.scrollTop = chatContainer.scrollHeight;
+      const chatContainer = document.querySelector('.conversation');
+      chatContainer.scrollTop = chatContainer.scrollHeight;
     }
 
   },
