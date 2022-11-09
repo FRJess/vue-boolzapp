@@ -178,11 +178,26 @@ createApp({
         } 
       ],
 
+      replyMessages: [
+        "Ciao, come stai?",
+        "Ti va di andare a cena fuori domani sera?",
+        "vado di fretta, scusa",
+        "Mi ha chiamato tuo padre",
+        "Tutto bene?",
+        "ok, grazie",
+        "Non ho capito.",
+        "Va bene, ci sentiamo dopo.",
+        "Ricordati di prendere il pane!",
+      ],
+      allIndexExtracted: [],
+      botIndex: null,
+
       activeConversation: 0,
       newMessage: '',
       contactFilter: '',
       show: false,
       showChevron: false,
+      scroll: '',
     }
   },
 
@@ -210,16 +225,28 @@ createApp({
       //reset new message input
       this.newMessageContent = '';
       setTimeout(this.getReplyMessage, 1000);
+      setTimeout(() => {
+        this.autoScroll();
+      }, 10);
     },
 
     //automatic answer by current contact
     getReplyMessage(){
       const newMessage = {
-        message: 'ok',
+        message: this.getRandomReply(),
         date: dateMessage,
         status: 'received'
       }
       this.contacts[this.activeConversation].messages.push(newMessage);
+      // setTimeout(this.refreshScroll, 100);
+      setTimeout(() => {
+        this.autoScroll();
+      }, 10);
+    },
+
+    getRandomReply(){
+      const num = Math.floor(Math.random() * (this.replyMessages.length));
+      return this.replyMessages[num];
     },
 
     //search input with map
@@ -253,6 +280,12 @@ createApp({
       }
       this.hideAll();
     },
+
+    //scroll
+    autoScroll(){
+      const chatContainer = document.getElementsByClassName('.messages-container');
+      return chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
 
   },
 
