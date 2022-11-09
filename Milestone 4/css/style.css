@@ -49,7 +49,7 @@ a:hover{
 
 /* BODY */
 .main-container{
-  width: 1200px;
+  width: 80vw;
   margin: auto;
   padding-top: 80px;
   height: 95vh;
@@ -58,6 +58,7 @@ a:hover{
 /* CONTACTS */
 .left-container{
   width: 40%;
+  min-width: 300px;
   flex-direction: column;
   background-color: white;
 }
@@ -135,6 +136,7 @@ a:hover{
 /* CONVERSATIONS */
 .right-container{
   width: 60%;
+  min-width: 400px;
   height: 100%;
   flex-direction: column;
   background-color: #F3F3F3;
