@@ -117,7 +117,6 @@ a:hover{
   overflow: auto;
   width: 100%;
   padding-right: 5px;
-  /* height: calc(100% - 170px); */
   background-color: white;
 }
 
@@ -220,4 +219,50 @@ a:hover{
 .contact-active{
   opacity: 1;
   background-color: #ECEEEE;
+}
+
+
+/* Dropdown menu */
+.fa-chevron-down {
+  font-size: 0.8rem;
+  position: absolute;
+  display: none;
+  top: 0;
+  right: 0;
+  margin: 5px;
+  color: #BBBABA;
+}
+
+.fa-chevron-down:hover{
+  cursor: pointer;
+}
+
+.drop-down {
+  display:none;
+  z-index: 999;
+  position: absolute;
+  top: 20px;
+  right: 5px;
+  padding: 10px 5px;
+  width: 150px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.drop-down p {
+  margin: 0;
+  color: black;
+  padding: 5px;
+}
+
+.drop-down p:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #BBBABA;
+  border-radius: 10px;
+}
+
+.message:hover .drop-down,
+.message:hover .fa-chevron-down {
+  display:inline;
 }

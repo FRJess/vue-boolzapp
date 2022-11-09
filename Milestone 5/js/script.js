@@ -181,6 +181,8 @@ createApp({
       activeConversation: 0,
       newMessage: '',
       contactFilter: '',
+      show: false,
+      showChevron: false,
     }
   },
 
@@ -233,6 +235,25 @@ createApp({
         return contact
       });
     },
+
+    //show dropdown menu on message
+    showMenu(){
+      this.show ? (this.show = false) : (this.show = true);
+    },
+
+    hideAll() {
+      this.showChevron = false;
+      this.show = false;
+    },
+
+    //delete message at click
+    deleteMsg(index) {
+      if (this.contacts[this.activeConversation].messages.length !== 1) {
+          this.contacts[this.activeConversation].messages.splice(index, 1);
+      }
+      this.hideAll();
+    },
+
   },
 
   mounted(){

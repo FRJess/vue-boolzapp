@@ -129,15 +129,22 @@
             <div 
             class="message-container d-flex py-2"
             v-for="(conversation, index) in contacts[activeConversation].messages"
-            :class="conversation.status">
+            :class="conversation.status"
+            @click.self="getMenu(index)">
                 <div 
                 class="message position-relative"
                 :class="conversation.status == 'sent' ? 'my-message' : 'contact-message'"
-                >
-                    <h3 class="mb-1">{{conversation.message}}</h3>
-                    <div class="message-time position-absolute bottom-0 end-0">
-                        <p class="m-0 text-secondary small">{{conversation.date}}</p>
-                    </div>
+                @mouseover="showChevron = true"
+                @mouseleave="hideAll()">
+                  <i @click="showMenu()" class="fa-solid fa-chevron-down" v-if="showChevron"></i>
+                  <div class="drop-down" v-if="show">
+                    <p>Message info</p>
+                    <p @click="deleteMsg(index)">Delete message</p>
+                  </div>
+                  <h3 class="mb-1">{{conversation.message}}</h3>
+                  <div class="message-time position-absolute bottom-0 end-0">
+                      <p class="m-0 text-secondary small">{{conversation.date}}</p>
+                  </div>
                 </div>
             </div>
           </div>
