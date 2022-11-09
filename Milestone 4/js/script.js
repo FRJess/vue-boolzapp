@@ -1,3 +1,9 @@
+// VARIABLES DECLARATION AND INIZIALIZATION
+
+const DateTime = luxon.DateTime;
+const now = DateTime.now();
+const dateMessage = now.setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS);
+
 // VUE
 
 const { createApp } = Vue;
@@ -8,6 +14,7 @@ createApp({
   data(){
     return{
       newMessageContent: '',
+      messageDate: new Date(),
       contacts: [ 
         {
           name: 'Fabio',
@@ -192,7 +199,7 @@ createApp({
       if(!this.newMessageContent) return;
       const newMessage = {
         message: this.newMessageContent,
-        date: 'now',
+        date: dateMessage,
         status: 'sent'
       }
 
@@ -207,7 +214,7 @@ createApp({
     getReplyMessage(){
       const newMessage = {
         message: 'ok',
-        date: 'now',
+        date: dateMessage,
         status: 'received'
       }
       this.contacts[this.activeConversation].messages.push(newMessage);
@@ -225,7 +232,7 @@ createApp({
         }
         return contact
       });
-    }
+    },
   },
 
   mounted(){
