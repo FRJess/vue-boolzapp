@@ -54,11 +54,25 @@
 
         <!-- Notification settings setion -->
         <div class="notifications d-flex align-items-center">
-          <a href="#"><i class="fas fa-bell-slash"></i></a>
+          <a 
+          href="#" 
+          v-if="notificationOff"
+          @click="notificationToggle()">
+          <i class="fa-solid fa-bell-slash"></i>
+          </a>
+          <a 
+          href="#" 
+          v-if="notificationOn"
+          @click="notificationToggle()">
+          <i class="fa-solid fa-bell"></i>
+          </a>
           <div class="notification-text">
             <h4 class="m-0 mb-1">Ricevi notifiche di nuovi messaggi</h4>
-            <a href="#">
-              <p class="m-0">Attiva notifiche desktop</p>
+            <a 
+            href="#"
+            @click="notificationToggle()">
+              <p class="m-0" v-if="turOnNotification">Attiva notifiche desktop</p>
+              <p class="m-0" v-if="turOffNotification">Disattiva notifiche desktop</p>
             </a>
           </div>
         </div>

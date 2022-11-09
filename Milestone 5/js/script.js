@@ -198,6 +198,10 @@ createApp({
       show: false,
       showChevron: false,
       scroll: '',
+      notificationOff: true,
+      notificationOn: false,
+      turOnNotification: true,
+      turOffNotification: false,
     }
   },
 
@@ -284,8 +288,15 @@ createApp({
     autoScroll(){
       const chatContainer = document.querySelector('.conversation');
       chatContainer.scrollTop = chatContainer.scrollHeight;
-    }
+    },
 
+    //notification toggle
+    notificationToggle(){
+      this.notificationOff = !this.notificationOff;
+      this.notificationOn = !this.notificationOn;
+      this.turOffNotification = !this.turOffNotification;
+      this.turOnNotification = !this.turOnNotification;
+    },
   },
 
   mounted(){
