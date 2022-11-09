@@ -152,8 +152,8 @@
                 @mouseleave="hideAll()">
                   <i @click="showMenu()" class="fa-solid fa-chevron-down" v-if="showChevron"></i>
                   <div class="drop-down" v-if="show">
-                    <p>Message info</p>
-                    <p @click="deleteMsg(index)">Delete message</p>
+                    <p>Informazioni</p>
+                    <p @click="deleteMsg(index)">Cancella</p>
                   </div>
                   <h3 class="mb-1">{{conversation.message}}</h3>
                   <div class="message-time position-absolute bottom-0 end-0">
