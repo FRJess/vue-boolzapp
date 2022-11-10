@@ -178,15 +178,6 @@ createApp({
     ],
     
     replyMessages: [
-      // "Ciao, come stai?",
-      // "Ti va di andare a cena fuori domani sera?",
-      // "vado di fretta, scusa",
-      // "Mi ha chiamato tuo padre",
-      // "Tutto bene?",
-      // "ok, grazie",
-      // "Non ho capito.",
-      // "Va bene, ci sentiamo dopo.",
-      // "Ricordati di prendere il pane!",
       '😍',
       '🤦🏻‍♀️',
       '👍🏼',
@@ -285,7 +276,7 @@ methods:{
     this.show ? (this.show = false) : (this.show = true);
   },
   
-  hideAll() {
+  hideAll(){
     this.showChevron = false;
     this.show = false;
   },
