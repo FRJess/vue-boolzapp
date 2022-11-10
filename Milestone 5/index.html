@@ -62,7 +62,7 @@
           </a>
           <a 
           href="#" 
-          v-if="notificationOn"
+          v-else="notificationOn"
           @click="notificationToggle()">
           <i class="fa-solid fa-bell"></i>
           </a>
@@ -71,8 +71,8 @@
             <a 
             href="#"
             @click="notificationToggle()">
-              <p class="m-0" v-if="turOnNotification">Attiva notifiche desktop</p>
-              <p class="m-0" v-if="turOffNotification">Disattiva notifiche desktop</p>
+              <p class="m-0" v-if="notificationOff">Attiva notifiche desktop</p>
+              <p class="m-0" v-else="notificationOn">Disattiva notifiche desktop</p>
             </a>
           </div>
         </div>

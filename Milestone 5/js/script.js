@@ -292,7 +292,7 @@ methods:{
   
   //delete message at click
   deleteMsg(index) {
-    if (this.contacts[this.activeConversation].messages.length !== 1) {
+    if (this.contacts[this.activeConversation].messages.length !==1) {
       this.contacts[this.activeConversation].messages.splice(index, 1);
     }
     this.hideAll();
@@ -307,15 +307,10 @@ methods:{
   //notification toggle
   notificationToggle(){
     this.notificationOff = !this.notificationOff;
-    this.notificationOn = !this.notificationOn;
-    this.turOffNotification = !this.turOffNotification;
-    this.turOnNotification = !this.turOnNotification;
   },
 },
 
-
 mounted(){
-  
 }
 
 }).mount('#app')
