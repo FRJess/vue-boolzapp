@@ -1,10 +1,8 @@
-// VARIABLES DECLARATION AND INIZIALIZATION
-
-
 // VUE
 
 const { createApp } = Vue;
 
+//luxon library
 const DateTime = luxon.DateTime;
 
 createApp({
@@ -160,7 +158,7 @@ createApp({
         messages: [
           {
             date: '08/04/2022 15:20:55',
-            message: 'Ciao, comìè finita poi la storia del lavoro?',
+            message: 'Ciao, com\'è finita poi la storia del lavoro?',
             status: 'received'
           }, 
           {
@@ -219,6 +217,12 @@ methods:{
     this.activeConversation = index;
     this.contacts[this.activeConversation].active = true;
   },
+
+  // getLastMessage(){
+  //   if(this.contacts[this.activeConversation].messages.length > 0){
+  //     return this.contacts[this.activeConversation].messages.at(-1).message;
+  //   }
+  // },
   
   //add new message to conversation using input
   createMessage(){
