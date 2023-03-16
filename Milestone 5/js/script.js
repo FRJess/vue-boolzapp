@@ -218,11 +218,6 @@ methods:{
     this.contacts[this.activeConversation].active = true;
   },
 
-  // getLastMessage(){
-  //   if(this.contacts[this.activeConversation].messages.length > 0){
-  //     return this.contacts[this.activeConversation].messages.at(-1).message;
-  //   }
-  // },
   
   //add new message to conversation using input
   createMessage(){
